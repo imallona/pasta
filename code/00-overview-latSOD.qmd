@@ -37,6 +37,7 @@ suppressPackageStartupMessages({
   library(magrittr)
   library(scater)
   library(bluster)
+  libray(scico)
 })
 
 theme_set(theme_light())
