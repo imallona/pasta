@@ -69,13 +69,14 @@ jobs:
           renv::install('quarto')
           renv::status()
           .libPaths()
-      # - name: Attempt to render the vignettes with quarto
-      #  shell: Rscript {0}
-      #  run: |
-      #    quarto::quarto_render('code/00-overview-latSOD.qmd')
-      - name: Fake HTML generation
-        run: |
-          quarto check &> docs/00-overview-latSOD.html
+      - name: Attempt to render the vignettes with quarto
+       shell: Rscript {0}
+       run: |
+         # setwd(code)
+         quarto::quarto_render('code/00-overview-latSOD.qmd')
+      # - name: Fake HTML generation
+      #   run: |
+      #     quarto check &> docs/00-overview-latSOD.html
       - name: Debug updated renv
         shell: Rscript {0}
         run: |
@@ -85,5 +86,5 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v4
         with:
-          name: fake-${{ strategy.job-index }}- ${{ matrix.python-version }}- ${{ matrix.os }}
+          name: fake-${{ strategy.job-index }}-py-${{ matrix.python-version }}-os-${{ matrix.os }}-r-${{ matrix.r-version }}-reqs-${{ matrix.requirements }}
           path: docs/00-overview-latSOD.html
