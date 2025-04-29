@@ -648,7 +648,7 @@ plotSpatialFeature(sfe_tissue,
 ## `Python`
 
 ```{python}
-sq.pl.spatial_scatter(adata, color="leiden", palette=ListedColormap(cmap_discrete.colors[:len(np.unique(adata.obs["leiden"]))]), library_id="spatial", title="Clusters", shape=None, size=55)
+sq.pl.spatial_scatter(adata, color="leiden", library_id="spatial", title="Clusters", shape=None, size=55)
 plt.gca().set_axis_off()
 plt.show()
 ```
