@@ -104,7 +104,7 @@ features <- c("Myh2", "Calr")
 ## `Python`
 
 ```{python}
-adata = sc.read_h5ad("./data/McKellarMuscleData_processed.h5ad")
+adata = sc.read_h5ad("../data/McKellarMuscleData_processed.h5ad")
 adata.obsm['spatial'] = np.array(list(zip((adata.obs['x'] * -1), adata.obs['y'])))
 adata.var_names = adata.var["symbol"]
 adata.raw = adata.copy()
