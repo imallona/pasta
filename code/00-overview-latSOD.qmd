@@ -41,7 +41,7 @@ suppressPackageStartupMessages({
 
 theme_set(theme_light())
 
-roma_colors <- data.frame(roma_colors = scico(256, palette = 'roma'))
+roma_colors <- data.frame(roma_colors = scico::scico(256, palette = 'roma'))
 write.csv(roma_colors , "../misc/roma_colors.csv")
 
 source('utils.R')

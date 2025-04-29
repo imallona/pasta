@@ -75,9 +75,10 @@ jobs:
       #    quarto::quarto_render('code/00-overview-latSOD.qmd')
       - name: simple html generated
         run: |
-          quarto render code/00-about.qmd
+          quarto render code/00-overview-latSOD.qmd
       - name: Archive code coverage results
         uses: actions/upload-artifact@v4
         with:
-          name: home
-          path: docs/00-about.html
+          with:
+          name: fake-${{ strategy.job-index }}-py-${{ matrix.python-version }}-os-${{ matrix.os }}-r-${{ matrix.r-version }}-reqs-${{ matrix.requirements }}
+          path: docs/00-overview-latSOD.html
