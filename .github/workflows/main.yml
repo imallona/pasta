@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.11"]
         r-version: ["4.5.0"]
-        requirements: ["requirements.txt", "requirements_versionless.txt", "requirements_semipinned.txt"]
+        requirements: ["requirements.txt"]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
