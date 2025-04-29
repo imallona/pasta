@@ -91,6 +91,12 @@ sfe_tissue <- sfe_tissue[rowSums(counts(sfe_tissue)) > 0, ]
 sfe_tissue <- scater::logNormCounts(sfe_tissue)
 
 ann <-  zellkonverter::SCE2AnnData(sfe_tissue)
+# Define the directory and file paths
+dir_path <- "../data"
+# Check if the directory exists, and create it if it doesn't
+if (!dir.exists(dir_path)) {
+  dir.create(dir_path)
+}
 anndata::write_h5ad(ann, "../data/McKellarMuscleData_processed.h5ad")
 
 features <- c("Myh2", "Calr")

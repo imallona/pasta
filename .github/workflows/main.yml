@@ -70,10 +70,8 @@ jobs:
           renv::status()
           .libPaths()
       - name: Attempt to render the vignettes with quarto
-        shell: Rscript {0}
         run: |
-          # setwd(code)
-          quarto::quarto_render('code/00-overview-latSOD.qmd')
+          quarto render code/00-overview-latSOD.qmd
       # - name: Fake HTML generation
       #   run: |
       #     quarto check &> docs/00-overview-latSOD.html
