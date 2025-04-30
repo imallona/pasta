@@ -20,7 +20,7 @@ contourpy
 cycler
 dask
 dask-expr
-dask-image
+dask-image @ git+https://github.com/dask/dask-image@a9da88acce8cd5eb53a34da0286dcc76c6c791db
 datashader
 docrep
 esda

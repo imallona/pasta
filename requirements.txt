@@ -20,7 +20,8 @@ contourpy==1.3.2
 cycler==0.12.1
 dask==2024.11.2
 dask-expr==1.1.19
-dask-image==2024.5.3
+# dask-image==2024.5.3
+dask-image @ git+https://github.com/dask/dask-image@a9da88acce8cd5eb53a34da0286dcc76c6c791db
 datashader==0.18.0
 docrep==0.3.2
 esda==2.7.0
