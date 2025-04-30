@@ -12,7 +12,7 @@ jobs:
         os: [ubuntu-22.04, ubuntu-24.04]
         python-version: ["3.10", "3.11", "3.12", "3.13"]
         r-version: ["4.5.0"]
-        requirements: ["requirements.txt", "requirements_semipinned.txt"]
+        requirements: ["requirements", "requirements_semipinned"]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
@@ -36,7 +36,7 @@ jobs:
       - name: pip install reqs
         shell: bash
         run: |
-          pip install -r ${{ matrix.requirements }}
+          pip install -r ${{ matrix.requirements }}.txt
       - name: Check env and python version
         run: |
           python --version
@@ -64,12 +64,12 @@ jobs:
           renv::install('quarto')
           renv::status()
           .libPaths()
-      - name: simple html generated
+      - name: Render all
         run: |
-          quarto render code/00-overview-latSOD.qmd
-      - name: Archive code coverage results
+          quarto render code/
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          with:
-          name: fake-${{ strategy.job-index }}-py-${{ matrix.python-version }}-os-${{ matrix.os }}-r-${{ matrix.r-version }}-reqs-${{ matrix.requirements }}
-          path: docs/00-overview-latSOD.html
+          name: vignette-${{ strategy.job-index }}-py-${{ matrix.python-version }}-os-${{ matrix.os }}-r-${{ matrix.r-version }}-reqs-${{ matrix.requirements }}
+          path: docs/
+          retention-days: 10
