@@ -58,6 +58,9 @@ numba
 numcodecs
 # spatialdata # ==0.4.0
 # sklearn-ann==0.1.2
+# squidpy
+spatialdata @ git+https://github.com/scverse/spatialdata.git@eb5a20257b2fdb60eb3bad815b1ff43964f941c9
+squidpy     @ git+https://github.com/scverse/squidpy.git@d7f759f91f2e4ef3f864da5ad945ac200d32011c
 scikit-learn==1.6.1
 shapely==2.1.0
 numpy
@@ -95,7 +98,6 @@ six
 slicerator
 soupsieve
 spatial_image
-squidpy
 statsmodels
 texttable
 threadpoolctl

@@ -95,7 +95,9 @@ slicerator==1.1.0
 soupsieve==2.7
 spatial_image==1.2.1
 # spatialdata==0.4.0
-squidpy==1.6.5
+# squidpy==1.6.5
+spatialdata @ git+https://github.com/scverse/spatialdata.git@eb5a20257b2fdb60eb3bad815b1ff43964f941c9
+squidpy     @ git+https://github.com/scverse/squidpy.git@d7f759f91f2e4ef3f864da5ad945ac200d32011c
 statsmodels==0.14.4
 texttable==1.7.0
 threadpoolctl==3.6.0
