@@ -59,6 +59,7 @@ numcodecs
 spatialdata # ==0.4.0
 # sklearn-ann==0.1.2
 scikit-learn==1.6.1
+scikit-misc==0.5.1
 shapely==2.1.0
 numpy
 ome-zarr

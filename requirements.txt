@@ -85,6 +85,7 @@ s3fs==2025.3.2
 scanpy==1.11.1
 scikit-image==0.25.2
 scikit-learn==1.5.2
+scikit-misc==0.5.1
 scipy==1.15.2
 seaborn==0.13.2
 session-info2==0.1.2
