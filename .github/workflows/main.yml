@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
-        python-version: ["3.11"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
         r-version: ["4.5.0"]
-        requirements: ["requirements.txt"]
+        requirements: ["requirements.txt", "requirements_semipinned.txt"]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
@@ -58,7 +58,7 @@ jobs:
           system('python --version')
       - name: Install quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      - name: Install quarto CRAN
+      - name: Install quarto CRAN on renv
         shell: Rscript {0}
         run: |
           renv::install('quarto')
