@@ -463,7 +463,6 @@ fig, ax = plt.subplots(1, 1, figsize=figsize, layout = "tight")
 sq.pl.spatial_scatter(
     adata,
     color="leiden",
-    palette=ListedColormap(cmap_discrete.colors[:len(np.unique(adata.obs["leiden"]))]),
     shape=None,
     library_id="spatial",
     title="Clusters",
